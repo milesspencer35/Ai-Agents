@@ -15,14 +15,31 @@ async def main(prompt_file: Path):
 		history.append({'role': 'user', 'content': user_msg})
 		response = await client.responses.create(
 			input=history,
-			model='gpt-4o-mini'
+			model='o3-mini',
+			reasoning={
+				"effort": "medium",
+				"summary": "auto"
+			}
 		)
+
+		# Assuming your response object is stored in `response`
+		reasoning_item = response.output[0]  # The ResponseReasoningItem
+		if hasattr(reasoning_item, "summary") and reasoning_item.summary:
+			summary_text = reasoning_item.summary[0].text
+			print("*******Reasoning summary: *********\n")
+			print(summary_text)
+			print("******* Reasoning summary end********\n")
+		else:
+			print("No reasoning summary found.")
+
+
 		history.append({
 			'role': 'assistant', 'content': response.output_text
 		})
 		print(response.output_text)
+		# Keep only the system prompt and the 9 most recent messages
 		if len(history) > 10:
-			break
+			history = [history[0]] + history[-9:]
 
 if __name__ == '__main__':
 	asyncio.run(main(Path(sys.argv[1])))
