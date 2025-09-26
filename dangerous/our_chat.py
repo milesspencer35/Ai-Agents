@@ -34,8 +34,6 @@ def get_current_date() -> str:
 def get_byu_football_schedule() -> str:
     """Returns BYU's football schedule for the current season"""
 
-    # API_KEY = "qbLSdqpcz3p3f+gx8HY3WfGvCHlTiF93m7SAXx18qVdjtIc4e2DqjB7MkSc7u6C9"  # you’ll need to sign up for access
-
     url = "https://api.collegefootballdata.com/games"
     params = {
         "year": 2025,
