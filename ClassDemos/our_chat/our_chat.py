@@ -18,7 +18,7 @@ async def main(prompt_file: Path):
 			model='o3-mini',
 			reasoning={
 				"effort": "medium",
-				"summary": "auto"
+				"summary": "detailed"
 			}
 		)
 
