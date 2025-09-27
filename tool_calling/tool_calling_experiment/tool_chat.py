@@ -50,11 +50,5 @@ while True:
                     })
                 })
 
-    # response = client.responses.create(
-    #     model="gpt-5-nano",
-    #     tools=ToolKit.tools,
-    #     input=input_list,
-    # )
-
     if response.output_text != "":
         print("\nAI: " + response.output_text)

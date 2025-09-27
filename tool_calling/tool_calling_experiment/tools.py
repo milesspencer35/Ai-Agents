@@ -5,6 +5,7 @@ from datetime import datetime
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+from google.auth.transport.requests import Request
 
 class ToolKit:
     # Tool definitions as a class variable
@@ -150,7 +151,7 @@ class ToolKit:
         }
 
         event_result = service.events().insert(calendarId=calendar_id, body=event).execute()
-        print("Event created: %s" % (event_result.get("htmlLink")))
+        print("-> Event created: %s" % (event_result.get("htmlLink")))
         return event_result
 
 # Create an instance for easier importing
