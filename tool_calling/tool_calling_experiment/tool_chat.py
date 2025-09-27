@@ -8,9 +8,13 @@ client = OpenAI()
 toolkit = ToolKit()
 input_list = []
 
+prompt_user = True
+
 while True:
-    user_input = input("User: ")
-    input_list.append({"role": "user", "content": user_input})
+
+    if prompt_user:
+        user_input = input("User: ")
+        input_list.append({"role": "user", "content": user_input})
 
     # 2. Prompt the model with tools defined
     response = client.responses.create(
@@ -21,6 +25,8 @@ while True:
 
     # Save function call outputs for subsequent requests
     input_list += response.output
+
+    prompt_user = not any(item.type == 'function_call' for item in response.output)
 
     for item in response.output:
         if item.type == "function_call":
@@ -44,10 +50,11 @@ while True:
                     })
                 })
 
-    response = client.responses.create(
-        model="gpt-5-nano",
-        tools=ToolKit.tools,
-        input=input_list,
-    )
+    # response = client.responses.create(
+    #     model="gpt-5-nano",
+    #     tools=ToolKit.tools,
+    #     input=input_list,
+    # )
 
-    print("\nAI: " + response.output_text)
+    if response.output_text != "":
+        print("\nAI: " + response.output_text)

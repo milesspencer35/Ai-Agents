@@ -76,7 +76,7 @@ class ToolKit:
     @staticmethod
     def get_byu_football_schedule():
         """Returns BYU's football schedule for the current season."""
-        print("Getting BYU football schedule")
+        print("-> Getting BYU football schedule")
         url = "https://api.collegefootballdata.com/games"
         params = {
             "year": 2025,
@@ -95,7 +95,7 @@ class ToolKit:
     @staticmethod
     def get_current_date() -> str:
         """Returns the current date in YYYY-MM-DD format."""
-        print("Getting current date")
+        print("-> Getting current date")
         return datetime.now().strftime("%Y-%m-%d")
 
     @staticmethod
@@ -122,6 +122,7 @@ class ToolKit:
         Returns:
             dict: Created event details
         """
+        print("-> Creating calendar event")
         creds = None
         if os.path.exists("token.json"):
             creds = Credentials.from_authorized_user_file("token.json", ToolKit.SCOPES)
