@@ -44,7 +44,6 @@ def get_byu_football_schedule() -> str:
         "Authorization": f"Bearer {os.environ['CFD_API_KEY']}"
     }
 
-
     resp = requests.get(url, params=params, headers=headers)
     if resp.status_code == 200:
         schedule = resp.json()
