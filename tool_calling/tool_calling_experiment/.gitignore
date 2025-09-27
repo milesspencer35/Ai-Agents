@@ -1,0 +1,45 @@
+# Sensitive credential files
+credentials.json
+token.json
+*.key
+.env*
+secrets/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+logs/
