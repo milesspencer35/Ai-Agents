@@ -1,0 +1,152 @@
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ============================================
+# Data files (add any specific data files you want to ignore)
+# ============================================
+*.csv
+*.json
+*.db
+*.sqlite3
+*.pkl
+*.h5
+*.pth
+*.pt
+*.bin
+*.npy
+*.npz
+
+# ============================================
+# Logs and databases
+# ============================================
+*.log
+*.sql
+*.sqlite
+logs/
+
+# ============================================
+# Virtual environments and environment variables
+# ============================================
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.*
+!.env.example
+
+# ============================================
+# Sensitive files and credentials
+# ============================================
+credentials.json
+token.json
+*.key
+secrets/
+
+# ============================================
+# Testing and coverage
+# ============================================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# ============================================
+# Type checkers
+# ============================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# ============================================
+# IDEs and editors
+# ============================================
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm/IntelliJ
+.idea/
+*.iml
+.idea_modules/
+
+# General editor files
+*.swp
+*.swo
+*~
+
+# ============================================
+# OS generated files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================
+# Jupyter Notebook
+# ============================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ============================================
+# Project specific ignores (add your own below)
+# ============================================
+
+# Example:
+# /data/  # Uncomment if you have a data directory to ignore
+# /models/  # Uncomment if you have model files to ignore
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+logs/
